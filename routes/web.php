@@ -7,4 +7,5 @@ use App\Http\Controllers\ArticleController;
 Route::get('/', [PublicController::class, 'homepage'])->name('home');
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articoli');
-Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('dettaglio');
+
+Route::get('/articles/{id}', [ArticleController::class, 'dettaglio'])->name('dettaglio');

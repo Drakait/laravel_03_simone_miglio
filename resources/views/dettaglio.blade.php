@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog - {{ $articolo['articolo'] }}</title>
+    <title>Blog - {{ $article['titolo'] }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/109fb709db.js" crossorigin="anonymous"></script>
@@ -35,11 +35,13 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
                 <div class="card bg-dark text-white border-secondary">
-                    <img src="https://picsum.photos/800/400?random={{ $id + 1 }}" class="card-img-top" style="height: 300px; object-fit: cover;" alt="{{ $articolo['articolo'] }}">
+                    <img src="https://picsum.photos/800/400?random={{ $article['id'] }}"
+                    class="card-img-top" style="height: 300px; object-fit: cover;" alt="{{ $article['titolo'] }}">
                     <div class="card-body text-center">
-                        <h1 class="text-primary display-6 fw-bold">{{ $articolo['articolo'] }}</h1>
-                        <h5 class="text-secondary">{{ $articolo['tipologia'] }}</h5>
-                        <p class="card-text mt-3">{{ $articolo['dettaglio'] }}</p>
+                        <span class="badge bg-primary mb-2">{{ $article['categoria'] }}</span>
+                        <h1 class="text-primary display-6 fw-bold">{{ $article['titolo'] }}</h1>
+                        <p class="text-secondary">di {{ $article['autore'] }} · {{ $article['data'] }}</p>
+                        <p class="card-text mt-3">{{ $article['testo'] }}</p>
                         <a href="{{ route('articoli') }}" class="btn btn-primary mt-2">Torna agli articoli</a>
                     </div>
                 </div>
